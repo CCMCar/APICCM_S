@@ -41,9 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarmanagementBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ClickapplicationBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCarManagementBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CCM.Easy.Car.Credit.DAL\CCM.Easy.Car.Credit.DAL.csproj">
+      <Project>{4f48ba06-2dfe-4ad5-82cf-539542223646}</Project>
+      <Name>CCM.Easy.Car.Credit.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CCM.Easy.Car.Credit.DataModel\CCM.Easy.Car.Credit.DataModel.csproj">
+      <Project>{fc9372ab-fabb-4cf2-a0d0-7aa01a1cf37c}</Project>
+      <Name>CCM.Easy.Car.Credit.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CCM.Easy.Car.Credit.DAL\CCM.Easy.Car.Credit.DAL.csproj">
