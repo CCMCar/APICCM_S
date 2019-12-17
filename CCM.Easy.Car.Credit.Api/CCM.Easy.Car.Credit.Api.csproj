@@ -206,6 +206,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClickapplicationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -306,6 +307,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CCm.Easy.Car.Credit.BLL\CCm.Easy.Car.Credit.BLL.csproj">
+      <Project>{9bd73dc8-a6bd-4826-b057-523dde8b4fbd}</Project>
+      <Name>CCm.Easy.Car.Credit.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CCM.Easy.Car.Credit.DataModel\CCM.Easy.Car.Credit.DataModel.csproj">
+      <Project>{fc9372ab-fabb-4cf2-a0d0-7aa01a1cf37c}</Project>
+      <Name>CCM.Easy.Car.Credit.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
