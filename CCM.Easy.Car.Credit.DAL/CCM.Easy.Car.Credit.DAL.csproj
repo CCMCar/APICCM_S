@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Carmanagement.cs" />
     <Compile Include="Clickapplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCarManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CCM.Easy.Car.Credit.DataModel\CCM.Easy.Car.Credit.DataModel.csproj">
