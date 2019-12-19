@@ -36,7 +36,7 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
             return bll.UserLogin(json);
         }
         /// <summary>
-        /// 邮箱登录验证邮箱是否存在
+        /// 邮箱登录验证邮箱是否存在 陈彤彤
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
