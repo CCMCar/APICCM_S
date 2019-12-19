@@ -15,14 +15,24 @@ namespace CCm.Easy.Car.Credit.BLL
     {
         Clickapplication dal = new Clickapplication();
         /// <summary>
+        /// 查询包含这个车辆的公司
+        /// </summary>
+        /// <param name="Id">车辆的编号查询</param>
+        /// <param name="name">车辆的名字查询</param>
+        /// <returns></returns>
+        public DataTable Chacha(int Id, string name)
+        {
+
+            return dal.Chacha(Id, name);
+        }
+        /// <summary>
         /// 车辆的查询
         /// </summary>
         /// <param name="Id">车的编号</param>
-        /// <param name="CarName">车的品牌名称</param>
         /// <returns></returns>
-        public DataTable Cha(int Id, string CarName)
+        public DataTable Cha(int Id)
         {
-            return dal.Cha(Id, CarName);
+            return dal.Cha(Id);
         }
         /// <summary>
         /// 用户信息查找
