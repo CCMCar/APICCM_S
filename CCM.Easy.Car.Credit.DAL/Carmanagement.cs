@@ -17,17 +17,23 @@ namespace CCM.Easy.Car.Credit.DAL
 		/// 车俩的查询及显示 晋力 12.17
 		/// </summary>
 		/// <returns></returns>
-		public DataTable CarTable()
+		public DataTable CarTable(string sql)
 		{
-			SqlCommand cmd = conn.CreateCommand();
-			string sql = @"select * from CarInfo Car join BrandType Brand on Car.BrandId=Brand.BrandId  join ShopInfo Shop on Car.ShopId=Shop.ShopId 
-join City Ct on Shop.CityId = Ct.CityId  where 1=1";//SQL语句
+			try
+			{
+				SqlCommand cmd = conn.CreateCommand();
+				cmd.CommandText = sql;
+				SqlDataAdapter ap = new SqlDataAdapter(cmd);//适配器
+				DataTable table = new DataTable("Mytable");//表格
+				ap.Fill(table);
+				return table;
+			}
+			catch (Exception ex)
+			{
 
-			cmd.CommandText = sql;
-			SqlDataAdapter ap = new SqlDataAdapter(cmd);//适配器
-			DataTable table = new DataTable("Mytable");//表格
-			ap.Fill(table);
-			return table;
+				throw ex;
+			}
+			
 		}
 	}
 }
