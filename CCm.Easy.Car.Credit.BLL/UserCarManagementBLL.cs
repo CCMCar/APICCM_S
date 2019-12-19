@@ -15,7 +15,7 @@ namespace CCm.Easy.Car.Credit.BLL
 	public class UserCarManagementBLL
 	{
 		SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Project;Integrated Security=True");
-		Carmanagement carmanagement = new Carmanagement();//DAL用户车俩管理
+		UserCarManagement dal=new UserCarManagement();//DAL用户车俩管理
 		/// <summary>
 		/// 用户的车辆添加 晋力 12.17
 		/// </summary>
@@ -23,11 +23,16 @@ namespace CCm.Easy.Car.Credit.BLL
 		/// <returns></returns>
 		public int UserCarAdd(UserCar userCar)
 		{
-			conn.Open();
-			SqlCommand cmd = conn.CreateCommand();
-			cmd.CommandText = $"insert into UserCar values('{userCar.UserId}','{userCar.CarId}','{userCar.CarJoinTime}','{userCar.UserCarState}')";//添加用户车辆
-			int n = cmd.ExecuteNonQuery();
-			return n;
+			try
+			{
+				return dal.UserCarAdd(userCar);
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+			
 		}
 	}
 }
