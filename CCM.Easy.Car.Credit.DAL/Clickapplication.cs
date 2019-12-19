@@ -23,7 +23,7 @@ namespace CCM.Easy.Car.Credit.DAL
         {
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand($" select CarInfo.*,BrandType.BrandName,ShopInfo.ShopName,ShopInfo.ShopAddress from CarInfo join BrandType on CarInfo.BrandId = BrandType.BrandIdjoin ShopInfo on CarInfo.ShopId = ShopInfo.ShopIdwhere  CarId ={Id } and BrandName={CarName}");
+            SqlCommand cmd = new SqlCommand($"  select CarInfo.*,BrandType.BrandName,ShopInfo.ShopName,ShopInfo.ShopAddress from CarInfo join BrandType on CarInfo.BrandId = BrandType.BrandId join ShopInfo on CarInfo.ShopId = ShopInfo.ShopId where  CarId ={Id } and BrandName='{CarName}'",conn);
             SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
             DataTable data = new DataTable("sf");
             sqlData.Fill(data);
@@ -40,7 +40,7 @@ namespace CCM.Easy.Car.Credit.DAL
         {
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand($" select * from UserInfo where UserEmail={Email} and UserPwd={Pwd}");
+            SqlCommand cmd = new SqlCommand($" select * from UserInfo where UserEmail='{Email}' and UserPwd='{Pwd}'");
             SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
             DataTable data = new DataTable("sf");
             sqlData.Fill(data);
@@ -56,7 +56,7 @@ namespace CCM.Easy.Car.Credit.DAL
         {
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand($" update UserInfo set UserTrueName={model.UserTrueName},UserEducation={model.UserEducation},UserJobInfo={model.UserJobInfo},UserPosition={model.UserPosition},UserCredit={model.UserCredit}, UserIncome={model.UserIncome},UserBandCard={model.UserBandCard} where UserId={model.UserId} ");
+            SqlCommand cmd = new SqlCommand($" update UserInfo set UserTrueName='{model.UserTrueName}',UserEducation='{model.UserEducation}',UserJobInfo='{model.UserJobInfo}',UserPosition='{model.UserPosition}',UserCredit='{model.UserCredit}', UserIncome='{model.UserIncome}',UserBandCard='{model.UserBandCard}' where UserId='{model.UserId}' ");
             int n = cmd.ExecuteNonQuery();
             conn.Close();
             return n;
