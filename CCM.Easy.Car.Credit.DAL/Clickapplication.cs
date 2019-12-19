@@ -74,7 +74,7 @@ namespace CCM.Easy.Car.Credit.DAL
         {
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand($" update UserInfo set UserTrueName='{model.UserTrueName}',UserEducation='{model.UserEducation}',UserJobInfo='{model.UserJobInfo}',UserPosition='{model.UserPosition}',UserCredit='{model.UserCredit}', UserIncome='{model.UserIncome}',UserBandCard='{model.UserBandCard}' where UserId='{model.UserId}' ");
+            SqlCommand cmd = new SqlCommand($" update UserInfo set UserTrueName='{model.UserTrueName}',UserNumber={model.UserNumber},UserTelPhone={model.UserTelPhone},UserEducation='{model.UserEducation}',UserJobInfo='{model.UserJobInfo}',UserPosition='{model.UserPosition}',UserCredit='{model.UserCredit}', UserIncome='{model.UserIncome}',UserBandCard='{model.UserBandCard}' where UserId='{model.UserId}' ");
             int n = cmd.ExecuteNonQuery();
             conn.Close();
             return n;
