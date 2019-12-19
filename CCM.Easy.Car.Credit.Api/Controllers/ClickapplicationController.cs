@@ -22,7 +22,8 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
         /// <param name="Id">车的编号</param>
         /// <param name="CarName">车的品牌名称</param>
         /// <returns></returns>
-        public DataTable Cha(int Id, string CarName)
+        [HttpGet]
+        public DataTable GetCha(int Id, string CarName)
         {
             return dal.Cha(Id, CarName);
         }
@@ -32,7 +33,8 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
         /// <param name="Email">用户邮箱</param>
         /// <param name="Pwd">用户密码</param>
         /// <returns></returns>
-        public  DataTable  UserXin(string Email, string Pwd)
+        [HttpGet]
+        public  DataTable  GetUserXin(string Email, string Pwd)
         {
             return dal.UserXin(Email, Pwd);
         }
@@ -41,7 +43,8 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
         /// </summary>
         /// <param name="model">学历，工作信息，职位等</param>
         /// <returns></returns>
-        public int Userdetailed(UserInfo model)
+        [HttpPost]
+        public int PostUserdetailed(UserInfo model)
         {
             return dal.Userdetailed(model);
         }

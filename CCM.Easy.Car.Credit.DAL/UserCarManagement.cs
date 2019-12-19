@@ -20,11 +20,20 @@ namespace CCM.Easy.Car.Credit.DAL
 		/// <returns></returns>
 		public  int UserCarAdd(UserCar userCar)
 		{
-			conn.Open();
-			SqlCommand cmd = conn.CreateCommand();
-			cmd.CommandText = $"insert into UserCar values('{userCar.UserId}','{userCar.CarId}','{userCar.CarJoinTime}','{userCar.UserCarState}')";//添加用户车辆
-			int n = cmd.ExecuteNonQuery();
-			return n;
+			try
+			{
+				conn.Open();
+				SqlCommand cmd = conn.CreateCommand();
+				cmd.CommandText = $"insert into UserCar values('{userCar.UserId}','{userCar.CarId}','{userCar.CarJoinTime}','{userCar.UserCarState}')";//添加用户车辆
+				int n = cmd.ExecuteNonQuery();
+				return n;
+			}
+			catch (Exception ex)
+			{
+
+				throw ex ;
+			}
+			
 		}
 	}
 }
