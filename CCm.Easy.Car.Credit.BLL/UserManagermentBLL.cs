@@ -35,9 +35,9 @@ namespace CCm.Easy.Car.Credit.BLL
         /// </summary>
         /// <param name="json"></param>
         /// <returns></returns>
-        public int UserLoginRe(string json)
+        public int UserLoginRe(UserInfo model)
         {
-            return dal.UserLoginRe(json);
+            return dal.UserLoginRe(model);
         }
     }
 }

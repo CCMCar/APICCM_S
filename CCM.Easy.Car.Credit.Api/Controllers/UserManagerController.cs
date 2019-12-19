@@ -35,10 +35,14 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
         {
             return bll.UserLogin(json);
         }
-
-        public int GetUserLoginRe(string json)
+        /// <summary>
+        /// 邮箱登录验证邮箱是否存在
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public int PutUserLoginRe(UserInfo model)
         {
-            return bll.UserLoginRe(json);
+            return bll.UserLoginRe(model);
         }
     }
 }

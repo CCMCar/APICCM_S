@@ -44,9 +44,13 @@ namespace CCM.Easy.Car.Credit.DAL
             int n = Convert.ToInt32(cmd.ExecuteScalar());
             return n;
         }
-        public int UserLoginRe(string json)
+        /// <summary>
+        /// 邮箱登录
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public int UserLoginRe(UserInfo model)
         {
-            UserInfo model = JsonConvert.DeserializeObject<UserInfo>(json);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = $"select count(1) from UserInfo where UserEmail='{model.UserEmail}'";
