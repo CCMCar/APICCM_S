@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using Newtonsoft.Json;
 namespace CCM.Easy.Car.Credit.Api.Controllers
 {
     /// <summary>
@@ -17,15 +17,29 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
     {
         ClickapplicationBll dal = new ClickapplicationBll();
         /// <summary>
-        /// 车辆的查询
+        /// 查询包含这个车辆的公司
         /// </summary>
-        /// <param name="Id">车的编号</param>
-        /// <param name="CarName">车的品牌名称</param>
+        /// <param name="Id">车辆的编号查询</param>
+        /// <param name="name">车辆的名字查询</param>
         /// <returns></returns>
         [HttpGet]
-        public DataTable GetCha(int Id, string CarName)
+        public DataTable Chacha(string join)
         {
-            return dal.Cha(Id, CarName);
+            CarInfo car = new CarInfo();
+            car = JsonConvert.DeserializeObject<CarInfo>(join);
+            return dal.Chacha(car.CarId, car.CarName);
+        }
+        /// <summary>
+        /// 车辆的查询
+        /// </summary>
+        /// <param name="join">车的编号</param>
+        /// <returns></returns>
+        [HttpGet]
+        public DataTable GetCha(string join)
+        {
+            CarInfo car = new CarInfo();
+            car = JsonConvert.DeserializeObject<CarInfo>(join);
+            return dal.Cha(car.CarId);
         }
         /// <summary>
         /// 用户信息查找
@@ -34,9 +48,11 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
         /// <param name="Pwd">用户密码</param>
         /// <returns></returns>
         [HttpGet]
-        public  DataTable  GetUserXin(string Email, string Pwd)
+        public  DataTable  GetUserXin(string join)
         {
-            return dal.UserXin(Email, Pwd);
+            UserInfo model = new UserInfo();
+            model = JsonConvert.DeserializeObject<UserInfo>(join);
+            return dal.UserXin(model.UserEmail, model.UserPwd);
         }
         /// <summary>
         /// 用户信息修改，补全信息
