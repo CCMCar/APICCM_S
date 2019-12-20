@@ -16,31 +16,8 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
     public class ClickapplicationController : ApiController
     {
         ClickapplicationBll dal = new ClickapplicationBll();
-        /// <summary>
-        /// 查询包含这个车辆的公司
-        /// </summary>
-        /// <param name="Id">车辆的编号查询</param>
-        /// <param name="name">车辆的名字查询</param>
-        /// <returns></returns>
-        [HttpGet]
-        public DataTable Chacha(string join)
-        {
-            CarInfo car = new CarInfo();
-            car = JsonConvert.DeserializeObject<CarInfo>(join);
-            return dal.Chacha(car.CarId, car.CarName);
-        }
-        /// <summary>
-        /// 车辆的查询
-        /// </summary>
-        /// <param name="join">车的编号</param>
-        /// <returns></returns>
-        [HttpGet]
-        public DataTable GetCha(string join)
-        {
-            CarInfo car = new CarInfo();
-            car = JsonConvert.DeserializeObject<CarInfo>(join);
-            return dal.Cha(car.CarId);
-        }
+       
+       
         /// <summary>
         /// 用户信息查找
         /// </summary>
