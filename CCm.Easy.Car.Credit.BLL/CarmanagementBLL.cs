@@ -51,5 +51,14 @@ join City Ct on Shop.CityId = Ct.CityId  where 1=1";//SQL语句
 			}
 			
 		}
+		/// <summary>
+		/// 车辆品牌二级联动 顾烯墰 12.19
+		/// </summary>
+		/// <param name="pid"></param>
+		/// <returns></returns>
+		public List<BrandType> BrandType(int pid = 0)
+		{
+			return carmanagement.BrandType(pid);
+		}
 	}
 }

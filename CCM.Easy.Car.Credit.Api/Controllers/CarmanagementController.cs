@@ -25,6 +25,14 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
 		{
 			return bll.CarTable(MinPrice,MaxPrice,BrandId,CarName);
 		}
-
+		/// <summary>
+		/// 车辆品牌二级联动 顾烯墰 12.19
+		/// </summary>
+		/// <param name="pid"></param>
+		/// <returns></returns>
+		public List<BrandType> GetBrandType(int pid = 0)
+		{
+			return bll.BrandType(pid);
+		}
 	}
 }

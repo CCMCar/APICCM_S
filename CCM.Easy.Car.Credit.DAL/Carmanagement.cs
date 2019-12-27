@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using CCM.Easy.Car.Credit.DataModel;
+using Dapper;
 namespace CCM.Easy.Car.Credit.DAL
 {
 	/// <summary>
@@ -34,6 +36,19 @@ namespace CCM.Easy.Car.Credit.DAL
 				throw ex;
 			}
 			
+		}
+		/// <summary>
+		/// 车辆品牌二级联动 顾烯墰 12.19
+		/// </summary>
+		/// <param name="pid"></param>
+		/// <returns></returns>
+		public List<BrandType> BrandType(int pid=0)
+		{
+			using (IDbConnection conn=new SqlConnection("Data Source=.;Initial Catalog=Project;Integrated Security=True"))
+			{
+				string sql = "select * from BrandType where PId=" + pid;
+				return conn.Query<BrandType>(sql).ToList();
+			}
 		}
 	}
 }
