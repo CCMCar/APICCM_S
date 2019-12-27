@@ -57,5 +57,18 @@ namespace CCM.Easy.Car.Credit.DAL
             int n = Convert.ToInt32(cmd.ExecuteScalar());
             return n;
         }
+		/// <summary>
+		/// 查询ID
+		/// </summary>
+		/// <param name="UserEmail"></param>
+		/// <returns></returns>
+		public int  UserId(string UserEmail)
+		{
+			conn.Open();
+			SqlCommand cmd = conn.CreateCommand();
+			cmd.CommandText = $"select UserId from UserInfo where UserEmail='" +UserEmail+"'";
+			int n = Convert.ToInt32(cmd.ExecuteScalar());
+			return n;
+		}
     }
 }

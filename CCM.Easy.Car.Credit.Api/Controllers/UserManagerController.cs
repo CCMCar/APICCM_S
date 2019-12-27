@@ -44,5 +44,14 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
         {
             return bll.UserLoginRe(model);
         }
-    }
+		/// <summary>
+		/// 查询ID
+		/// </summary>
+		/// <param name="UserEmail"></param>
+		/// <returns></returns>
+		public int DeleteUserId(string UserEmail)
+		{
+			return bll.UserId(UserEmail);
+		}
+	}
 }

@@ -34,6 +34,7 @@
     <Reference Include="Dapper">
       <HintPath>C:\Users\CCTV\Desktop\Content\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,12 +49,33 @@
     <Compile Include="Clickapplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCarManagement.cs" />
+    <Compile Include="UserManagerment.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CCM.Easy.Car.Credit.DataModel\CCM.Easy.Car.Credit.DataModel.csproj">
       <Project>{fc9372ab-fabb-4cf2-a0d0-7aa01a1cf37c}</Project>
       <Name>CCM.Easy.Car.Credit.DataModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\CCM.Easy.Car.Credit.DAL.csproj.CopyComplete" />
+    <None Include="obj\Debug\CCM.Easy.Car.Credit.DAL.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\CCM.Easy.Car.Credit.DAL.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DAL.dll" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DAL.pdb" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DataModel.dll" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DataModel.pdb" />
+    <Content Include="bin\Debug\Dapper.dll" />
+    <Content Include="obj\Debug\CCM.Easy.Car.Credit.DAL.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CCM.Easy.Car.Credit.DAL.dll" />
+    <Content Include="obj\Debug\CCM.Easy.Car.Credit.DAL.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

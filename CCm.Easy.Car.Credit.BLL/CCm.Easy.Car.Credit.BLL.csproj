@@ -68,5 +68,26 @@
       <Name>CCM.Easy.Car.Credit.DataModel</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CCm.Easy.Car.Credit.BLL.dll" />
+    <Content Include="bin\Debug\CCm.Easy.Car.Credit.BLL.pdb" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DAL.dll" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DAL.pdb" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DataModel.dll" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DataModel.pdb" />
+    <Content Include="bin\Debug\Dapper.dll" />
+    <Content Include="obj\Debug\CCm.Easy.Car.Credit.BLL.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CCm.Easy.Car.Credit.BLL.dll" />
+    <Content Include="obj\Debug\CCm.Easy.Car.Credit.BLL.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\CCm.Easy.Car.Credit.BLL.csproj.CopyComplete" />
+    <None Include="obj\Debug\CCm.Easy.Car.Credit.BLL.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\CCm.Easy.Car.Credit.BLL.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

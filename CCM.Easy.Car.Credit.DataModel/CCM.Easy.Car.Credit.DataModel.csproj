@@ -54,5 +54,21 @@
     <Compile Include="UserCar.cs" />
     <Compile Include="UserInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DataModel.dll" />
+    <Content Include="bin\Debug\CCM.Easy.Car.Credit.DataModel.pdb" />
+    <Content Include="obj\Debug\CCM.Easy.Car.Credit.DataModel.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CCM.Easy.Car.Credit.DataModel.dll" />
+    <Content Include="obj\Debug\CCM.Easy.Car.Credit.DataModel.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\CCM.Easy.Car.Credit.DataModel.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\CCM.Easy.Car.Credit.DataModel.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

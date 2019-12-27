@@ -39,5 +39,14 @@ namespace CCm.Easy.Car.Credit.BLL
         {
             return dal.UserLoginRe(model);
         }
-    }
+		/// <summary>
+		/// 查询ID
+		/// </summary>
+		/// <param name="UserEmail"></param>
+		/// <returns></returns>
+		public int UserId(string UserEmail)
+		{
+			return dal.UserId(UserEmail);
+		}
+	}
 }
