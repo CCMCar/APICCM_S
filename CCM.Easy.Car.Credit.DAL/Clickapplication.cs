@@ -17,13 +17,45 @@ namespace CCM.Easy.Car.Credit.DAL
         /// 车辆的查询
         /// </summary>
         /// <param name="Id">车的编号</param>
-        /// <param name="CarName">车的品牌名称</param>
         /// <returns></returns>
-        public DataTable Cha(int Id,string CarName)
+        public DataTable Cha(int Id)
         {
+
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand($"  select CarInfo.*,BrandType.BrandName,ShopInfo.ShopName,ShopInfo.ShopAddress from CarInfo join BrandType on CarInfo.BrandId = BrandType.BrandId join ShopInfo on CarInfo.ShopId = ShopInfo.ShopId where  CarId ={Id } and BrandName='{CarName}'",conn);
+            string sql = "select * from UserCar join CarInfo on UserCar.CarId=CarInfo.CarId join BrandType on BrandType.BrandId=CarInfo.BrandId join ShopInfo on ShopInfo.ShopId=CarInfo.ShopId join City on City.CityId=ShopInfo.CityId where 1=1";
+            if (Id != 0)
+            {
+                sql += $" and CarInfo.CarId={Id}";
+            }
+            SqlCommand cmd = new SqlCommand(sql,conn);
+            SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
+            DataTable data = new DataTable("sf");
+            sqlData.Fill(data);
+            conn.Close();
+            return data;
+        }
+        /// <summary>
+        /// 查询包含这个车辆的公司
+        /// </summary>
+        /// <param name="Id">车辆的编号查询</param>
+        /// <param name="name">车辆的名字查询</param>
+        /// <returns></returns>
+        public DataTable Chacha(int Id,string name)
+        {
+
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
+            conn.Open();
+            string sql = "select * from CarInfo join ShopInfo on CarInfo.ShopId=ShopInfo.ShopId where 1=1";
+            if (Id!=0)
+            {
+                sql += $" and CarInfo.CarId={Id} ";
+            }
+            if (!string.IsNullOrEmpty(name))
+            {
+                sql += $" and CarInfo.CarName like '%'{name}'%'";
+            }
+            SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
             DataTable data = new DataTable("sf");
             sqlData.Fill(data);
@@ -40,7 +72,16 @@ namespace CCM.Easy.Car.Credit.DAL
         {
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand($" select * from UserInfo where UserEmail='{Email}' and UserPwd='{Pwd}'");
+            string sql = "select * from UserInfo  where 1=1";
+            if (!string.IsNullOrEmpty(Email))
+            {
+                sql += $" and UserEmail={Email} ";
+            }
+            if (!string.IsNullOrEmpty(Pwd))
+            {
+                sql += $"  and Pwd={Pwd}";
+            }
+            SqlCommand cmd = new SqlCommand(sql,conn);
             SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
             DataTable data = new DataTable("sf");
             sqlData.Fill(data);
@@ -56,7 +97,7 @@ namespace CCM.Easy.Car.Credit.DAL
         {
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=XProject;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand($" update UserInfo set UserTrueName='{model.UserTrueName}',UserEducation='{model.UserEducation}',UserJobInfo='{model.UserJobInfo}',UserPosition='{model.UserPosition}',UserCredit='{model.UserCredit}', UserIncome='{model.UserIncome}',UserBandCard='{model.UserBandCard}' where UserId='{model.UserId}' ");
+            SqlCommand cmd = new SqlCommand($" update UserInfo set UserTrueName='{model.UserTrueName}',UserNumber={model.UserNumber},UserTelPhone={model.UserTelPhone},UserEducation='{model.UserEducation}',UserJobInfo='{model.UserJobInfo}',UserPosition='{model.UserPosition}',UserCredit='{model.UserCredit}', UserIncome='{model.UserIncome}',UserBandCard='{model.UserBandCard}' where UserId='{model.UserId}' ",conn);
             int n = cmd.ExecuteNonQuery();
             conn.Close();
             return n;

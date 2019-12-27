@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using Newtonsoft.Json;
 namespace CCM.Easy.Car.Credit.Api.Controllers
 {
     /// <summary>
@@ -16,17 +16,8 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
     public class ClickapplicationController : ApiController
     {
         ClickapplicationBll dal = new ClickapplicationBll();
-        /// <summary>
-        /// 车辆的查询
-        /// </summary>
-        /// <param name="Id">车的编号</param>
-        /// <param name="CarName">车的品牌名称</param>
-        /// <returns></returns>
-        [HttpGet]
-        public DataTable GetCha(int Id, string CarName)
-        {
-            return dal.Cha(Id, CarName);
-        }
+       
+       
         /// <summary>
         /// 用户信息查找
         /// </summary>
@@ -34,9 +25,11 @@ namespace CCM.Easy.Car.Credit.Api.Controllers
         /// <param name="Pwd">用户密码</param>
         /// <returns></returns>
         [HttpGet]
-        public  DataTable  GetUserXin(string Email, string Pwd)
+        public  DataTable  GetUserXin(string join)
         {
-            return dal.UserXin(Email, Pwd);
+            UserInfo model = new UserInfo();
+            model = JsonConvert.DeserializeObject<UserInfo>(join);
+            return dal.UserXin(model.UserEmail, model.UserPwd);
         }
         /// <summary>
         /// 用户信息修改，补全信息
