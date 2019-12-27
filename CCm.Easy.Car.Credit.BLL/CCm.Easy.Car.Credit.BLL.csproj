@@ -45,6 +45,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ClickapplicationBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateInfoBLL.cs" />
     <Compile Include="UserCarManagementBLL.cs" />
     <Compile Include="UserManagermentBLL.cs" />
   </ItemGroup>

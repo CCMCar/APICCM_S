@@ -46,7 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper">
-      <HintPath>C:\Users\CCTV\Desktop\Content\Dapper.dll</HintPath>
+      <HintPath>..\..\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -213,6 +213,7 @@
     <Compile Include="Controllers\Clickapplication1Controller.cs" />
     <Compile Include="Controllers\Clickapplication2Controller.cs" />
     <Compile Include="Controllers\ClickapplicationController.cs" />
+    <Compile Include="Controllers\StateInfo.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserCarManagementController.cs" />
     <Compile Include="Controllers\UserManagerController.cs" />

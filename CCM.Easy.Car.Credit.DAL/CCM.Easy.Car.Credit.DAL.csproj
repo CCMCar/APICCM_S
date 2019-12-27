@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper">
-      <HintPath>C:\Users\CCTV\Desktop\Content\Dapper.dll</HintPath>
+      <HintPath>..\..\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -48,6 +48,7 @@
     <Compile Include="Carmanagement.cs" />
     <Compile Include="Clickapplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateInfoDAL.cs" />
     <Compile Include="UserCarManagement.cs" />
     <Compile Include="UserManagerment.cs" />
   </ItemGroup>
